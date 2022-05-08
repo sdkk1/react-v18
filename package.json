@@ -25,6 +25,19 @@
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/**/*.{ts,tsx,css,scss}'"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --max-warnings=0 --ext .ts,.tsx src/"
+    ],
+    "src/**/*.{ts,tsx,css,scss}": [
+      "prettier --write 'src/**/*.{ts,tsx,css,scss}'"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,6 +61,8 @@
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
     "prettier": "2.6.2"
   }
 }
