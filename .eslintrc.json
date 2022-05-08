@@ -24,6 +24,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "ignorePatterns": ["**/*.config.js"],
   "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
     "no-use-before-define": "off",
